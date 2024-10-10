@@ -1,7 +1,6 @@
 package com.introduccion;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Libro {
     private String titulo;
