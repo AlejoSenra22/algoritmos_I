@@ -1,0 +1,16 @@
+//Esto iría en el codigo de la lista genérica.
+@Override
+public E remove(int index) {
+    if (size == 0) {
+        throw new IllegalStateException("No se puede remover elementos de una lista vacía.");
+    }
+    verificarIndice(index);
+    E removedElement = elementos[index];
+    System.arraycopy(elementos, index + 1, elementos, index, size - index - 1);
+    elementos[size - 1] = null;
+    size--;
+    if (size < elementos.length / 4) {
+        reducirCapacidad();
+    }
+    return removedElement;
+}
